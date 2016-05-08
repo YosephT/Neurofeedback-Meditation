@@ -12,7 +12,7 @@ The project can be categorized into several categories. We've tried to give brie
 
 ### Emokit
 
-Emokit was developed as an open source driver created to access the raw data stream from the EPOC. The original project can be located here (). The related files found on our project are those that we have modified. Substantial work was done to make sure the individual nodes were identified and passed in from the Python to Java as strings.
+Emokit was developed as an open source driver created to access the raw data stream from the EPOC. The original project can be located here (https://github.com/openyou/emokit). The related files found on our project are those that we have modified. Substantial work was done to make sure the individual nodes were identified and passed in from the Python to Java as strings.
 
 ### Data Analysis
 
@@ -27,9 +27,9 @@ Node AF3|hertz 0: 119.855 + 56.143i|hertz 1: 77.123 + 94.123i|hertz 2: 26.412 + 
 
 ### Fast-Fourier Transform & Complex Numbers
 
-We utilized and modified the FFT algorithm developed by Princeton University (). Further explanation on how they work can be found here.
+We utilized and modified the FFT algorithm developed by Princeton University (http://introcs.cs.princeton.edu/java/97data/FFT.java.html). Further explanation on how they work can be found here(http://introcs.cs.princeton.edu/java/97data/).
 
-The complex numbers class was also developed by Princeton University and has not been modified at all. Both the class and explanations on how it functions can be found here ().
+The complex numbers class was also developed by Princeton University and has not been modified at all. Both the class and explanations on how it functions can be found here (http://introcs.cs.princeton.edu/java/97data/Complex.java.html).
 
 ### Graphing
 
