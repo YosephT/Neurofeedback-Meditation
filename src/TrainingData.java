@@ -77,7 +77,6 @@ public class TrainingData {
     public void addNumbers(Complex[][] powerSpectra) {
         int electrodeCounter = 0;
         int hzCounter = 0;
-        // first set of data
         for (Complex[] spectrum : powerSpectra) {
             for (Complex c : spectrum) {
                 double input = complexToPower(c); //insert sqrt function or whatever here
