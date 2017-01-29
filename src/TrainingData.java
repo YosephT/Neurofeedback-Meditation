@@ -89,19 +89,7 @@ public class TrainingData {
                 hzCounter = 0;
             }
         }
-        // any subsequent set of data
-        else {
-            for (Complex[] spectrum : powerSpectra) {
-                for (Complex c : spectrum) {
-                    double input = complexToPower(c);
-                    double current = electrodesAndTrainingValues.get(electrodeList[electrodeCounter])[hzCounter];
-                    electrodesAndTrainingValues.get(electrodeList[electrodeCounter])[hzCounter] = (input + current) / 2;
-                    hzCounter ++;
-                }
-                electrodeCounter ++;
-                hzCounter = 0;
-            }
-        }
+        spectrumsReceived ++;
     }
 
     /**
@@ -140,6 +128,7 @@ public class TrainingData {
             for (Map.Entry e: electrodesAndTrainingValues.entrySet()) {
                 file.write(e.getKey() + ",");
                 for (double d : (double[]) e.getValue()) {
+                    d = d/spectrumsReceived;
                     file.write(String.valueOf(d) + ",");
                 }
                 file.write("\n");
@@ -162,15 +151,17 @@ public class TrainingData {
             double weightedValue = allWeights[i] * values.get(i);
             sum += weightedValue;
             weightedValues[i] = weightedValue;
-            meanOfWeightedValues = (meanOfWeightedValues + weightedValue) / 2;
+            meanOfWeightedValues = meanOfWeightedValues + weightedValue;
         }
+        meanOfWeightedValues = meanOfWeightedValues / allWeights.length;
         this.summation = sum;
 
         double[] weightedSquaredValues = new double[allWeights.length];
         double meanOfWeightedSquaredValues = 0;
         for (int i = 0; i < allWeights.length; i++) {
-            meanOfWeightedSquaredValues = (meanOfWeightedSquaredValues + Math.pow(weightedValues[i] - meanOfWeightedValues, 2)) / 2;
+            meanOfWeightedSquaredValues = meanOfWeightedSquaredValues + Math.pow(weightedValues[i] - meanOfWeightedValues, 2);
         }
+        meanOfWeightedSquaredValues = meanOfWeightedSquaredValues / allWeights.length;
         this.sD = Math.sqrt(meanOfWeightedSquaredValues);
 
         this.mu = 100 / (2 * this.sD);
