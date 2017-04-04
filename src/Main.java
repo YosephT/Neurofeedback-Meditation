@@ -454,8 +454,8 @@ public class Main {
     }
 
     /**
-     This function will establish a connection
-     with the EEG via the emokit python command
+     * This function will establish a connection
+     * with the EEG via the emokit python command
      */
     private static Process startConnection() throws IOException {
         Process p = Runtime.getRuntime().exec("python emokit-master/python/example.py");
