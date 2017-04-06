@@ -18,7 +18,7 @@ import mainPack.TrainingData;
 
 
 /*
-authors: Oscar Courchaine, Yoseph Tesfagaber
+authors: Oscar Courchaine, Yoseph Tesfagaber, Matt Groth
  */
 public class Main {
 
