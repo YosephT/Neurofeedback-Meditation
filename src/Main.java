@@ -1,6 +1,6 @@
 import javafx.scene.media.AudioClip;
-import org.LiveGraph.LiveGraph;
-import org.LiveGraph.settings.DataFileSettings;
+// import org.LiveGraph.LiveGraph;
+// import org.LiveGraph.settings.DataFileSettings;
 
 import java.io.*;
 import java.nio.file.Paths;
@@ -488,10 +488,10 @@ public class Main {
     /**
      * start the graphing Java apps
      */
-    private static void startGraphing() {
-        LiveGraph app = LiveGraph.application();
-        app.execStandalone();
-    }
+    // private static void startGraphing() {
+    //     LiveGraph app = LiveGraph.application();
+    //     app.execStandalone();
+    // }
 
     /**
      * maps the java graphing app to our desired graph data file(s)
