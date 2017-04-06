@@ -1,5 +1,3 @@
-testing edit file
-
 # Neurofeedback-Meditation
 
 The purpose of this Neuroscience/Computer Science study was to investigate the potential of a consumer electroencephalogram (EEG), the Emotiv EPOC, in neurofeedback (NFB) for meditation. We were seeking to discover whether
