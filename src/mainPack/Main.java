@@ -1,3 +1,6 @@
+package mainPack;
+
+
 import javafx.scene.media.AudioClip;
 // import org.LiveGraph.LiveGraph;
 // import org.LiveGraph.settings.DataFileSettings;
@@ -8,6 +11,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
+import mainPack.Complex;
+import mainPack.FFT;
+import mainPack.TrainingData;
+
 
 /*
 authors: Oscar Courchaine, Yoseph Tesfagaber
@@ -496,10 +504,10 @@ public class Main {
     /**
      * maps the java graphing app to our desired graph data file(s)
      */
-    private static void initializeSettings() {
-        DataFileSettings dfs = new DataFileSettings();
-        dfs.setDataFile(outputFilePath + meanOutputFileName + ".lgdat");
-        dfs.setUpdateFrequency(1000);
-        dfs.save("startup.lgdfs");
-    }
+    // private static void initializeSettings() {
+    //     DataFileSettings dfs = new DataFileSettings();
+    //     dfs.setDataFile(outputFilePath + meanOutputFileName + ".lgdat");
+    //     dfs.setUpdateFrequency(1000);
+    //     dfs.save("startup.lgdfs");
+    // }
 }
