@@ -261,9 +261,15 @@ public class Main {
         AudioClip noise = new AudioClip(Paths.get(soundFilePath).toUri().toString());
         int changeVolumeLevelTime = 0;
         double newVol = 0.0;
+
+        System.out.println("[LOG] ready for dataInput");
+
         while ((s = dataInput.readLine()) != null) {
             if ((e = errorCatcher.readLine()) != null) { }
             lineCounter ++;
+
+            System.out.println("[LOG] Line: " + lineCounter);
+            System.out.println("[LOG] Python Output : " + s);
 
             // initialize session settings
             if (lineCounter == 1) {
