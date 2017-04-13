@@ -1,6 +1,9 @@
+package mainPack;
+
+
 import javafx.scene.media.AudioClip;
-import org.LiveGraph.LiveGraph;
-import org.LiveGraph.settings.DataFileSettings;
+// import org.LiveGraph.LiveGraph;
+// import org.LiveGraph.settings.DataFileSettings;
 
 import java.io.*;
 import java.nio.file.Paths;
@@ -9,8 +12,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import mainPack.Complex;
+import mainPack.FFT;
+import mainPack.TrainingData;
+
+
 /*
-authors: Oscar Courchaine, Yoseph Tesfagaber
+authors: Oscar Courchaine, Yoseph Tesfagaber, Matt Groth
  */
 public class Main {
 
@@ -253,9 +261,15 @@ public class Main {
         AudioClip noise = new AudioClip(Paths.get(soundFilePath).toUri().toString());
         int changeVolumeLevelTime = 0;
         double newVol = 0.0;
+
+        System.out.println("[LOG] ready for dataInput");
+
         while ((s = dataInput.readLine()) != null) {
             if ((e = errorCatcher.readLine()) != null) { }
             lineCounter ++;
+
+            System.out.println("[LOG] Line: " + lineCounter);
+            System.out.println("[LOG] Python Output : " + s);
 
             // initialize session settings
             if (lineCounter == 1) {
@@ -454,8 +468,8 @@ public class Main {
     }
 
     /**
-     This function will establish a connection
-     with the EEG via the emokit python command
+     * This function will establish a connection
+     * with the EEG via the emokit python command
      */
     private static Process startConnection() throws IOException {
         Process p = Runtime.getRuntime().exec("python emokit-master/python/example.py");
@@ -488,18 +502,18 @@ public class Main {
     /**
      * start the graphing Java apps
      */
-    private static void startGraphing() {
-        LiveGraph app = LiveGraph.application();
-        app.execStandalone();
-    }
+    // private static void startGraphing() {
+    //     LiveGraph app = LiveGraph.application();
+    //     app.execStandalone();
+    // }
 
     /**
      * maps the java graphing app to our desired graph data file(s)
      */
-    private static void initializeSettings() {
-        DataFileSettings dfs = new DataFileSettings();
-        dfs.setDataFile(outputFilePath + meanOutputFileName + ".lgdat");
-        dfs.setUpdateFrequency(1000);
-        dfs.save("startup.lgdfs");
-    }
+    // private static void initializeSettings() {
+    //     DataFileSettings dfs = new DataFileSettings();
+    //     dfs.setDataFile(outputFilePath + meanOutputFileName + ".lgdat");
+    //     dfs.setUpdateFrequency(1000);
+    //     dfs.save("startup.lgdfs");
+    // }
 }
